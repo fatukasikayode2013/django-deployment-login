@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container" id='face'>
+        <h1> <a href="{% url 'admin:index' %}" data-toggle="tooltip" data-placement="top" title="Take me to the Adminpage">Admin</a> </h1>
+        
+            <h1> <a href="{% url 'vhome' %}">Home</a> </h1>
+              <h1> <a href="{% url 'Register' %}">Register</a> </h1>
+                <script>
+                  $('#face').tooltip({ boundary: 'window' })
+                </script>
+                {% if user.is_authenticated %}
+                  <li> <a href="{% url 'logout' %}">Logout</a>  </li>
+                {% else %}
+                  <li> <a href="{% url 'user_login' %}" data-toggle="tooltip" data-placement="top" title="Login">Login</a> </li>
+                {% endif %}
+
+      </div>
+
+    </div>
+
+{% block body_body %}
+{% endblock %}
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+
+
+
+{% block body_body %}
+
+{% for x in h.all %}
+<div class="row">
+  <div class="column">
+    <img src="{{   x.pic_image  }}" alt="" style="width:50%;border-radius:50%">
+  </div>
+
+</div>
+
+
+{% endfor %}
+hello
+
+
+
+
+{% endblock %}
